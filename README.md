@@ -1,8 +1,4 @@
-# NONBSP - Text Whitespace Normalizer
-
 <div align="center">
-
-![NONBSP Logo](public/og-image.webp)
 
 **A powerful web application for detecting and removing hidden whitespace characters and formatting artifacts from text**
 
@@ -14,20 +10,6 @@
 [Live Demo](#) • [Report Bug](#) • [Request Feature](#)
 
 </div>
-
----
-
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [Features](#-features)
-- [Architecture](#-architecture)
-- [Getting Started](#-getting-started)
-- [Usage](#-usage)
-- [Technical Details](#-technical-details)
-- [Testing](#-testing)
-- [Contributing](#-contributing)
-- [License](#-license)
 
 ---
 
@@ -65,6 +47,14 @@ graph LR
 ### Detected Issues
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {
+  'primaryColor': '#ffffff',
+  'primaryTextColor': '#000000',
+  'primaryBorderColor': '#ffffff',
+  'lineColor': '#ffffff',
+  'secondaryColor': '#ffffff',
+  'tertiaryColor': '#ffffff'
+}}}%%
 mindmap
   root((NONBSP<br/>Detects))
     Non-Breaking Spaces
@@ -123,62 +113,6 @@ graph TB
     style G fill:#3178c6
     style H fill:#3178c6
 ```
-
-### Data Flow
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant UI
-    participant State
-    participant normalizeWhitespace
-    participant highlightNbsp
-    participant Clipboard
-
-    User->>UI: Paste Text
-    UI->>State: Update inputText
-    State->>normalizeWhitespace: Process Text
-    normalizeWhitespace-->>State: Return Cleaned Text
-    State->>highlightNbsp: Check for Issues
-    highlightNbsp-->>State: Return hasIssues
-    State->>UI: Update Display
-    
-    User->>UI: Toggle Highlights
-    UI->>highlightNbsp: Get Segments
-    highlightNbsp-->>UI: Return Highlighted Segments
-    
-    User->>UI: Click Copy
-    UI->>Clipboard: Write Cleaned Text
-    Clipboard-->>UI: Success
-    UI->>User: Show Confirmation
-```
-
-### Component Structure
-
-```mermaid
-graph TD
-    A[App.tsx] --> B[Banner Component]
-    A --> C[Input Section]
-    A --> D[Output Section]
-    A --> E[Footer Controls]
-    
-    C --> C1[Header with Stats]
-    C --> C2[Textarea/Highlight View]
-    C --> C3[Toggle Highlights Button]
-    
-    D --> D1[Header with Stats]
-    D --> D2[Read-only Textarea]
-    
-    E --> E1[Copy Button]
-    E --> E2[Reset Button]
-    E --> E3[Attribution]
-    
-    style A fill:#646cff
-    style C fill:#4ade80
-    style D fill:#60a5fa
-    style E fill:#f59e0b
-```
-
 ---
 
 ## 🚀 Getting Started
@@ -260,39 +194,6 @@ flowchart LR
 ```
 
 ---
-
-## 🔧 Technical Details
-
-### Technology Stack
-
-| Category | Technology |
-|----------|-----------|
-| **Framework** | React 18.3.1 |
-| **Language** | TypeScript 5.5.3 |
-| **Build Tool** | Vite 5.4.2 |
-| **Styling** | Tailwind CSS 3.4.1 |
-| **Testing** | Vitest 4.0.16 |
-| **Icons** | Lucide React 0.344.0 |
-| **Backend** | Supabase 2.57.4 |
-
-### Core Utilities
-
-#### normalizeWhitespace Function
-
-```mermaid
-flowchart TD
-    A[Input Text] --> B[Normalize Line Endings]
-    B --> C[Replace Special Whitespace]
-    C --> D[Extract Code Blocks]
-    D --> E[Remove Multiple Spaces]
-    E --> F[Limit Newlines to 3]
-    F --> G[Trim Line Whitespace]
-    G --> H[Restore Code Blocks]
-    H --> I[Return Cleaned Text]
-    
-    style A fill:#fef3c7
-    style I fill:#d1fae5
-```
 
 **Detected Characters:**
 - Non-breaking spaces: `\u00A0`, `\u202F`, `\u2007`
