@@ -1,5 +1,7 @@
 <div align="center">
 
+# NbspNeutralizer
+
 **A powerful web application for detecting and removing hidden whitespace characters and formatting artifacts from text**
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue.svg)](https://www.typescriptlang.org/)
@@ -7,15 +9,13 @@
 [![Vite](https://img.shields.io/badge/Vite-5.4.2-646cff.svg)](https://vitejs.dev/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-[Live Demo](#) • [Report Bug](#) • [Request Feature](#)
-
 </div>
 
 ---
 
 ## 🎯 Overview
 
-NONBSP is a modern web application designed to identify and normalize problematic whitespace characters in text. It detects non-breaking spaces (NBSP), zero-width characters, excessive spacing, and other hidden formatting artifacts that can cause issues in text processing, AI-generated content, and document formatting.
+A modern web application designed to identify and normalize problematic whitespace characters in text. It detects non-breaking spaces (NBSP), zero-width characters, excessive spacing, and other hidden formatting artifacts that can cause issues in text processing, AI-generated content, and document formatting.
 
 ### Problem Statement
 
